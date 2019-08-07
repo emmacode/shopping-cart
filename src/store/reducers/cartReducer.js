@@ -4,13 +4,8 @@ import Item3 from "../../images/item3.jpg";
 import Item4 from "../../images/item4.jpg";
 import Item5 from "../../images/item5.jpg";
 import Item6 from "../../images/item6.jpg";
-import {
-  ADD_TO_CART,
-  REMOVE_ITEM,
-  SUB_QUANTITY,
-  ADD_QUANTITY,
-  ADD_SHIPPING
-} from "../actions/ActionsTypes";
+
+import * as actionTypes from "../actions/ActionsTypes";
 
 const initialState = {
   items: [
@@ -66,88 +61,119 @@ const initialState = {
   addedItems: [],
   total: 0
 };
+
 const cartReducer = (state = initialState, action) => {
-  //INSIDE HOME COMPONENT
-  if (action.type === ADD_TO_CART) {
-    let addedItem = state.items.find(item => item.id === action.id);
-    //check if the action id exists in the addedItems
-    let existed_item = state.addedItems.find(item => action.id === item.id);
-    if (existed_item) {
-      addedItem.quantity += 1;
+  switch (action.type) {
+    case actionTypes.ADD_TO_CART:
+      let addedItem1 = state.items.find(item => item.id === action.id);
+      let existed_item = state.addedItems.find(item => action.id === item.id);
+      if (existed_item) {
+        addedItem1.quantity += 1;
+        return {
+          ...state,
+          total: state.total + addedItem1.price
+        };
+      } else {
+        addedItem1.quantity = 1;
+        //calculating new total
+        let newTotal1 = state.total + addedItem1.price;
+        return {
+          ...state,
+          addedItems: [...state.addedItems, addedItem1],
+          total: newTotal1
+        };
+      }
+
+    case actionTypes.REMOVE_ITEM:
+      let itemToRemove = state.addedItems.find(item => item.id === action.id);
+      let new_items1 = state.addedItems.filter(item => item.id !== action.id);
+      //calculating total if an is removed
+      let newTotal2 = state.total - itemToRemove.price * itemToRemove.quantity;
+      console.log(itemToRemove);
       return {
         ...state,
-        total: state.total + addedItem.price
+        addedItems: new_items1,
+        total: newTotal2
       };
-    } else {
-      addedItem.quantity = 1;
-      //calculating the total
-      let newTotal = state.total + addedItem.price;
 
+    //cart component
+    // case actionTypes.ADD_QUANTITY:
+    // if (action.type === actionTypes.ADD_QUANTITY) {
+    //   let addedItem = state.items.find(item => item.id === action.id);
+    //   addedItem.quantity += 1;
+    //   let newTotal = state.total + addedItem.price;
+    //   return {
+    //     ...state,
+    //     total: newTotal
+    //   };
+    // }
+
+    // if (action.type === actionTypes.SUB_QUANTITY) {
+    //   let addedItem = state.items.find(item => item.id === action.id);
+    //   //if qnt is 0 then should be removed
+    //   if (addedItem.quantity === 1) {
+    //     let new_items = state.addedItems.filter(
+    //       item => item.id !== action.id
+    //     );
+    //     let newTotal = state.total - addedItem.price;
+    //     return {
+    //       ...state,
+    //       addedItems: new_items,
+    //       total: newTotal
+    //     };
+    //   } else {
+    //     addedItem.quantity -= 1;
+    //     let newTotal = state.total - addedItem.price;
+    //     return {
+    //       ...state,
+    //       total: newTotal
+    //     };
+    //   }
+    // }
+
+    case actionTypes.ADD_QUANTITY:
+      let addedItem2 = state.items.find(item => item.id === action.id);
+      addedItem2.quantity += 1;
+      let newTotal3 = state.total + addedItem2.price;
       return {
         ...state,
-        addedItems: [...state.addedItems, addedItem],
-        total: newTotal
+        total: newTotal3
       };
-    }
-  }
-  if (action.type === REMOVE_ITEM) {
-    let itemToRemove = state.addedItems.find(item => action.id === item.id);
-    let new_items = state.addedItems.filter(item => action.id !== item.id);
 
-    //calculating the total
-    let newTotal = state.total - itemToRemove.price * itemToRemove.quantity;
-    console.log(itemToRemove);
-    return {
-      ...state,
-      addedItems: new_items,
-      total: newTotal
-    };
-  }
-  //INSIDE CART COMPONENT
-  if (action.type === ADD_QUANTITY) {
-    let addedItem = state.items.find(item => item.id === action.id);
-    addedItem.quantity += 1;
-    let newTotal = state.total + addedItem.price;
-    return {
-      ...state,
-      total: newTotal
-    };
-  }
-  if (action.type === SUB_QUANTITY) {
-    let addedItem = state.items.find(item => item.id === action.id);
-    //if the qt == 0 then it should be removed
-    if (addedItem.quantity === 1) {
-      let new_items = state.addedItems.filter(item => item.id !== action.id);
-      let newTotal = state.total - addedItem.price;
+    case actionTypes.SUB_QUANTITY:
+      let addedItem3 = state.items.find(item => item.id === action.id);
+      //if qnt is 0 then should be removed
+      if (addedItem3.quantity === 1) {
+        let new_items2 = state.addedItems.filter(item => item.id !== action.id);
+        let newTotal4 = state.total - addedItem3.price;
+        return {
+          ...state,
+          addedItems: new_items2,
+          total: newTotal4
+        };
+      } else {
+        addedItem3.quantity -= 1;
+        let newTotal4 = state.total - addedItem3.price;
+        return {
+          ...state,
+          total: newTotal4
+        };
+      }
+
+    case actionTypes.ADD_SHIPPING:
       return {
         ...state,
-        addedItems: new_items,
-        total: newTotal
+        total: state.total + 6
       };
-    } else {
-      addedItem.quantity -= 1;
-      let newTotal = state.total - addedItem.price;
+
+    case actionTypes.SUB_SHIPPING:
       return {
         ...state,
-        total: newTotal
+        total: state.total - 6
       };
-    }
-  }
 
-  if (action.type === ADD_SHIPPING) {
-    return {
-      ...state,
-      total: state.total + 6
-    };
-  }
-
-  if (action.type === "SUB_SHIPPING") {
-    return {
-      ...state,
-      total: state.total - 6
-    };
-  } else {
-    return state;
+    default:
+      return state;
   }
 };
 

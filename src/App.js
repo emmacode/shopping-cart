@@ -3,7 +3,7 @@ import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 
 import "./App.css";
-import cartReducer from "./store/reducers/cartReducer1";
+import cartReducer from "./store/reducers/cartReducer";
 import Main from "./views";
 
 const store = createStore(
