@@ -17,7 +17,7 @@ class Home extends React.PureComponent {
             <span className="card-title">{item.title}</span>
             <span
               to="/"
-              className="btn-floating halfway-fab waves-effect waves-light red"
+              className="btn-floating halfway-fab waves-effect waves-light Home__red"
               onClick={() => {
                 this._handleClick(item.id);
               }}

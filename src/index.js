@@ -1,15 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { createStore, compose } from "redux";
+import { Provider } from "react-redux";
+//import { BrowserRouter as Router } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
+import cartReducer from "./store/reducers/cartReducer";
 import * as serviceWorker from "./serviceWorker";
 
+const store = createStore(
+  cartReducer,
+  compose(
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
+
 ReactDOM.render(
-  <Router>
+  <Provider store={store}>
     <App />
-  </Router>,
+  </Provider>,
   document.getElementById("root")
 );
 

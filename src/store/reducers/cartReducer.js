@@ -96,41 +96,6 @@ const cartReducer = (state = initialState, action) => {
         total: newTotal2
       };
 
-    //cart component
-    // case actionTypes.ADD_QUANTITY:
-    // if (action.type === actionTypes.ADD_QUANTITY) {
-    //   let addedItem = state.items.find(item => item.id === action.id);
-    //   addedItem.quantity += 1;
-    //   let newTotal = state.total + addedItem.price;
-    //   return {
-    //     ...state,
-    //     total: newTotal
-    //   };
-    // }
-
-    // if (action.type === actionTypes.SUB_QUANTITY) {
-    //   let addedItem = state.items.find(item => item.id === action.id);
-    //   //if qnt is 0 then should be removed
-    //   if (addedItem.quantity === 1) {
-    //     let new_items = state.addedItems.filter(
-    //       item => item.id !== action.id
-    //     );
-    //     let newTotal = state.total - addedItem.price;
-    //     return {
-    //       ...state,
-    //       addedItems: new_items,
-    //       total: newTotal
-    //     };
-    //   } else {
-    //     addedItem.quantity -= 1;
-    //     let newTotal = state.total - addedItem.price;
-    //     return {
-    //       ...state,
-    //       total: newTotal
-    //     };
-    //   }
-    // }
-
     case actionTypes.ADD_QUANTITY:
       let addedItem2 = state.items.find(item => item.id === action.id);
       addedItem2.quantity += 1;

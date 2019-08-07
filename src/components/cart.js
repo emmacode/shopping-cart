@@ -85,7 +85,8 @@ class Cart extends React.PureComponent {
 }
 
 const mapStateToProps = state => ({
-  items: state.items
+  items: state.addeditems
+  //addedItems: state.addedItems
 });
 
 const mapDispatchToProps = dispatch => ({

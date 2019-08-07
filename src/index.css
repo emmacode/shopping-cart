@@ -1,3 +1,12 @@
+nav {
+  background-color: #2196f3 !important;
+}
+.Home__red {
+  background-color: #2196f3;
+}
+.Home__red:hover {
+  background-color: #2195f3a6;
+}
 .box {
   display: flex;
   justify-content: space-between;
@@ -23,7 +32,7 @@
 .collection-item.avatar .title {
   font-size: 20px;
   font-weight: 500;
-  color: #2196f3 blue;
+  color: #2196f3;
   display: block;
   margin-bottom: 20px;
 }
@@ -33,7 +42,4 @@
 }
 .item-desc {
   align-self: center;
-}
-.navbar-wrapper {
-  color: #2196f3 blue !important;
 }

@@ -32,14 +32,14 @@ export const addQuantity = id => {
   };
 };
 
-// export const addShipping = () => {
-//   return {
-//     type: Types.ADD_SHIPPING
-//   };
-// };
+export const addShipping = () => {
+  return {
+    type: Types.ADD_SHIPPING
+  };
+};
 
-// export const subShipping = () => {
-//   return {
-//     type: Types.SUB_SHIPPING
-//   };
-// };
+export const subtractShipping = () => {
+  return {
+    type: Types.SUB_SHIPPING
+  };
+};

@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { addShipping, subtractShipping } from "../store/actions/index";
+
 class Recipe extends React.PureComponent {
   componentWillUnmount() {
     if (this.refs.shipping.checked) {
@@ -50,8 +52,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addShipping: () => dispatch({ type: "ADD_SHIPPING" }),
-  subtractShipping: () => dispatch({ type: "SUB_SHIPPING" })
+  addShipping: () => dispatch(addShipping()),
+  subtractShipping: () => dispatch(subtractShipping())
 });
 
 export default connect(
