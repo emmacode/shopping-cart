@@ -19,6 +19,9 @@ nav {
 .card {
   width: 300px;
 }
+.card-image img {
+  height: 250px;
+}
 .card .card-image .card-title {
   color: black;
   font-weight: 400;
