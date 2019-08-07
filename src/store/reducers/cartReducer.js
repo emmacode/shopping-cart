@@ -1,9 +1,9 @@
-import Item1 from "../../images/item1.jpg";
-import Item2 from "../../images/item2.jpg";
-import Item3 from "../../images/item3.jpg";
-import Item4 from "../../images/item4.jpg";
-import Item5 from "../../images/item5.jpg";
-import Item6 from "../../images/item6.jpg";
+import Image1 from "../../images/image1.jpg";
+import Image2 from "../../images/image2.jpg";
+import Image3 from "../../images/image3.jpg";
+import Image4 from "../../images/image4.jpg";
+import Image5 from "../../images/image5.jpg";
+import Image6 from "../../images/image6.jpg";
 
 import * as actionTypes from "../actions/ActionsTypes";
 
@@ -15,7 +15,7 @@ const initialState = {
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
       price: 110,
-      img: Item1
+      img: Image1
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const initialState = {
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
       price: 80,
-      img: Item2
+      img: Image2
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const initialState = {
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
       price: 120,
-      img: Item3
+      img: Image3
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ const initialState = {
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
       price: 260,
-      img: Item4
+      img: Image4
     },
     {
       id: 5,
@@ -47,7 +47,7 @@ const initialState = {
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
       price: 160,
-      img: Item5
+      img: Image5
     },
     {
       id: 6,
@@ -55,7 +55,7 @@ const initialState = {
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
       price: 90,
-      img: Item6
+      img: Image6
     }
   ],
   addedItems: [],
