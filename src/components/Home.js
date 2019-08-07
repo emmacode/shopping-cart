@@ -56,7 +56,9 @@ const mapStateToProps = state => ({
 //OR
 
 const mapDispatchToProps = dispatch => ({
-  addToCart: id => dispatch(addToCart(id))
+  addToCart: id => {
+    dispatch(addToCart(id));
+  }
 });
 
 export default connect(

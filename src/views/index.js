@@ -9,6 +9,7 @@ export default class Main extends React.PureComponent {
   render() {
     return (
       <Router>
+        <div />
         <Navbar />
         <Switch>
           <Route component={Home} path="/" exact />
