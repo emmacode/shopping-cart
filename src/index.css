@@ -29,6 +29,27 @@ nav {
 .cart {
   margin-top: 40px;
 }
+.Cart__add-remove {
+  margin-bottom: 10px;
+}
+.Cart__add {
+  font-size: 7px;
+  margin-right: 10px;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+}
+.Cart__remove {
+  font-size: 7px;
+  margin-left: 10px;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+}
+.Cart__quantity {
+  display: flex;
+  justify-content: center;
+}
 .collection .collection-item {
   display: flex;
 }

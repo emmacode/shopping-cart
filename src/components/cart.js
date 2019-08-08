@@ -32,29 +32,33 @@ class Cart extends React.PureComponent {
               <p>
                 <b>Price: {item.price}$</b>
               </p>
-              <p>
-                <b>Quantity: {item.quantity}</b>
-              </p>
-              <div className="add-remove">
+
+              <div className="Cart__add-remove">
                 <Link to="/cart">
-                  <i
-                    className="material-icons"
-                    onClick={() => {
-                      this._handleAddQuantity(item.id);
-                    }}
-                  >
-                    arrow_drop_up
-                  </i>
+                  <button className="Cart__add">
+                    {" "}
+                    <i
+                      className="material-icons"
+                      onClick={() => {
+                        this._handleAddQuantity(item.id);
+                      }}
+                    >
+                      add
+                    </i>
+                  </button>
                 </Link>
+                <b>{item.quantity}</b>
                 <Link to="/cart">
-                  <i
-                    className="material-icons"
-                    onClick={() => {
-                      this._handleSubtractQuantity(item.id);
-                    }}
-                  >
-                    arrow_drop_down
-                  </i>
+                  <button className="Cart__remove">
+                    <i
+                      className="material-icons"
+                      onClick={() => {
+                        this._handleSubtractQuantity(item.id);
+                      }}
+                    >
+                      remove
+                    </i>
+                  </button>
                 </Link>
               </div>
               <button
