@@ -1,37 +1,47 @@
 nav {
   background-color: #2196f3 !important;
 }
+
 .Home__red {
   background-color: #2196f3;
 }
+
 .Home__red:hover {
   background-color: #2195f3a6;
 }
+
 .box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 .material-icons {
   font-size: 2.4em;
   cursor: pointer;
 }
+
 .card {
   width: 300px;
 }
+
 .card-image img {
   height: 250px;
 }
+
 .card .card-image .card-title {
   color: black;
   font-weight: 400;
 }
+
 .cart {
   margin-top: 40px;
 }
+
 .Cart__add-remove {
   margin-bottom: 10px;
 }
+
 .Cart__add {
   font-size: 7px;
   margin-right: 10px;
@@ -39,6 +49,7 @@ nav {
   border-radius: 3px;
   border: none;
 }
+
 .Cart__remove {
   font-size: 7px;
   margin-left: 10px;
@@ -46,13 +57,16 @@ nav {
   border-radius: 3px;
   border: none;
 }
+
 .Cart__quantity {
   display: flex;
   justify-content: center;
 }
+
 .collection .collection-item {
   display: flex;
 }
+
 .collection-item.avatar .title {
   font-size: 20px;
   font-weight: 500;
@@ -60,10 +74,12 @@ nav {
   display: block;
   margin-bottom: 20px;
 }
+
 .collection .collection-item img {
   width: 150px;
   margin-right: 25px;
 }
+
 .item-desc {
   align-self: center;
 }
