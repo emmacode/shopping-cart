@@ -68,7 +68,7 @@ const cartReducer = (state = initialState, action) => {
       let addedItem1 = state.items.find(item => item.id === action.id);
       let existed_item = state.addedItems.find(item => action.id === item.id);
       if (existed_item) {
-        addedItem1.quantity += 1;
+        addedItem1.quantity++;
         return {
           ...state,
           total: state.total + addedItem1.price
@@ -89,7 +89,7 @@ const cartReducer = (state = initialState, action) => {
       let new_items1 = state.addedItems.filter(item => item.id !== action.id);
       //calculating total if an is removed
       let newTotal2 = state.total - itemToRemove.price * itemToRemove.quantity;
-      console.log(itemToRemove);
+      //console.log(itemToRemove);
       return {
         ...state,
         addedItems: new_items1,
@@ -98,7 +98,7 @@ const cartReducer = (state = initialState, action) => {
 
     case actionTypes.ADD_QUANTITY:
       let addedItem2 = state.items.find(item => item.id === action.id);
-      addedItem2.quantity += 1;
+      addedItem2.quantity++;
       let newTotal3 = state.total + addedItem2.price;
       return {
         ...state,
